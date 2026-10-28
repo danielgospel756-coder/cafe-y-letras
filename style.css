@@ -1,0 +1,361 @@
+/* ==========================================================================
+   HOJA DE ESTILOS: CAFÉ & LETRAS (ESTILO TRADICIONAL ARGENTINO PREMIUM)
+   ========================================================================== */
+
+/* Importamos fuentes literarias y modernas directamente desde Google Fonts */
+@import url('https://googleapis.com');
+
+/* Variables de color de la tradición nacional (Celeste colonial, cueros y maderas) */
+:root {
+    --color-fondo: #f4eae1;       /* Arena suave / pergamino */
+    --color-tarjeta: #ffffff;
+    --color-texto: #3e2723;       /* Marrón café oscuro */
+    --color-celeste: #74a3cd;     /* Celeste colonial */
+    --color-celeste-hover: #5582aa;
+    --color-borde: #d7ccc8;
+}
+
+/* Estilos Generales y Centrado Absoluto con Flexbox */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease, background-image 0.4s ease;
+
+    /* CAPA EXTRA SEGURA: Colocamos tu imagen de fondo sin romper nada */
+    background-image: linear-gradient(rgba(244, 234, 225, 0.88), rgba(244, 234, 225, 0.88)), 
+                      url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Encabezado Principal */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    letter-spacing: -1px;
+    margin: 0;
+    color: var(--color-celeste);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.eslogan {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #6d4c41;
+    margin-top: 5px;
+}
+
+/* Tarjeta Principal Flotante (Efecto Cristal Elegante) */
+#tarjeta {
+    background-color: var(--color-tarjeta);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(62, 39, 35, 0.08);
+    padding: 40px;
+    max-width: 650px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Sección de la Frase del Martín Fierro */
+#texto-frase {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #4e342e;
+}
+
+#autor-frase {
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-celeste);
+    margin-bottom: 25px;
+}
+
+/* Botones y Controles Estilo Cápsula Moderna */
+.botones-control {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button, select {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-celeste);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Bordes completamente redondeados */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(116, 163, 205, 0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+}
+
+button:hover, select:hover {
+    background-color: var(--color-celeste-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(116, 163, 205, 0.4);
+}
+
+select {
+    width: 100%;
+    background-image: none;
+    text-align-last: center;
+}
+
+/* Separadores de Sección */
+.separador {
+    border: 0;
+    height: 1px;
+    background: var(--color-borde);
+    margin: 35px 0;
+}
+
+/* Secciones de Contenido */
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-celeste);
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 25px;
+}
+
+.columnas-menu {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.categoria {
+    flex: 1;
+}
+
+.categoria h3 {
+    border-bottom: 2px solid var(--color-celeste);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Alineación Perfecta de Platos y Precios Actuales */
+.seccion-menu li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted var(--color-borde);
+    padding: 10px 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: transform 0.2s ease;
+}
+
+.seccion-menu li:hover {
+    transform: translateX(4px); /* Sutil movimiento al pasar el cursor */
+}
+
+/* Diseño de las etiquetas de precios */
+.precio {
+    font-weight: bold;
+    color: #5d4037;
+    background-color: rgba(116, 163, 205, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Notificación de Libros */
+#notificacion-libro {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    border: 1px solid #c8e6c9;
+}
+
+.oculto {
+    display: none;
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN DEL FONDO (Filtros suavizados para que la imagen se note más)
+   ========================================================================== */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease, background-image 0.4s ease;
+
+    /* REBAJAMOS EL FILTRO CLARO (De 0.88 a 0.45 para descubrir la foto) */
+    background-image: linear-gradient(rgba(244, 234, 225, 0.45), rgba(244, 234, 225, 0.45)), 
+                      url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   MODO OSCURO (Filtro nocturno más translúcido)
+   ========================================================================== */
+body.modo-oscuro {
+    background-color: #1e293b;
+    color: #f8fafc;
+    /* REBAJAMOS EL FILTRO OSCURO (De 0.92 a 0.65 para que la foto se aprecie de noche) */
+    background-image: linear-gradient(rgba(30, 41, 59, 0.65), rgba(30, 41, 59, 0.65)), 
+                      url('fondo.jpg') !important;
+}
+
+body.modo-oscuro #tarjeta {
+    background-color: #f1e3cbd9; /* Amarillo vintage */
+    border: 1px solid #dcd0ba;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    color: #2d1a12 !important; /* FUERZA EL TEXTO GENERAL A MARRÓN CAFÉ OSCURO */
+}
+
+body.modo-oscuro #texto-frase {
+    color: #2d1a12 !important; /* Resalta la frase del Martín Fierro */
+}
+
+body.modo-oscuro .eslogan {
+    color: #2d1a12 !important; /* Marrón café bien oscuro para que se vea excelente de noche */
+    font-weight: 500;
+}
+
+body.modo-oscuro h2 {
+    color: #74a3cd !important; /* Mantiene los títulos principales en celeste colonial */
+}
+
+body.modo-oscuro p {
+    color: #2d1a12 !important; /* Asegura que todos los textos descriptivos se lean perfectos */
+}
+
+/* ==========================================================================
+   DETALLE PATRIO: ESCARAPELA INTERACTIVA CON CSS PURO
+   ========================================================================== */
+
+/* Posicionamiento absoluto relativo a la tarjeta */
+#tarjeta {
+    position: relative; /* Permite anclar la escarapela en la esquina */
+}
+
+.escarapela {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer; /* Cambia el cursor a manito de selección */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    user-select: none; /* Evita que se seleccione el elemento textualmente al hacer doble clic */
+}
+
+/* Efecto de "pulsado" cuando hacés clic en la escarapela */
+.escarapela:active {
+    transform: scale(0.9) rotate(20deg);
+}
+
+/* Animación original: rota suavemente al pasar el mouse */
+.escarapela:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+/* Capas de color de la Bandera Argentina */
+.circulo-celeste {
+    width: 45px;
+    height: 45px;
+    background-color: #74a3cd; /* Celeste colonial */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circulo-blanco {
+    width: 27px;
+    height: 27px;
+    background-color: #ffffff; /* Blanco puro */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circulo-sol {
+    width: 11px;
+    height: 11px;
+    background-color: #fbc02d; /* Amarillo Sol de Mayo */
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(251, 192, 45, 0.6);
+}
+
+/* Ajuste sutil de sombra para el modo oscuro */
+body.modo-oscuro .escarapela {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* ==========================================================================
+   FONDO OSCURO INTENSO PARA LAS OPCIONES DE LOS MENÚS DESPLEGABLES
+   ========================================================================== */
+
+/* Cuando la página pasa a Modo Oscuro, los desplegables cambian por dentro */
+body.modo-oscuro select option {
+    background-color: #0f172a !important; /* Azul oscuro casi negro ultra intenso */
+    color: #f8fafc !important;            /* Letras blancas impecables para que resalten */
+}
+
+/* Color del menú cerrado en modo nocturno para que combine con el diseño */
+body.modo-oscuro select {
+    background-color: #475569 !important; /* Gris pizarra elegante */
+    color: #ffffff !important;
+    border: 1px solid #64748b;
+}
+
+/* REGLA MAESTRA: Eslogan en Amarillo Fosforescente Flúor para Modo Oscuro */
+body.modo-oscuro header .eslogan, 
+body.modo-oscuro .eslogan {
+    color: #e1ff00 !important; /* Amarillo fosforescente / verde flúor brillante */
+    font-weight: 600 !important; /* Le da cuerpo a la letra para que se lea perfecto */
+    text-shadow: 0 0 8px rgba(225, 255, 0, 0.4); /* Le da un leve efecto de brillo de neón */
+}

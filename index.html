@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café & Letras - Tradición Argentina</title>
+    <!-- Vinculación de la hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado con título principal y eslogan tradicional -->
+    <header>
+        <h1>Café & Letras</h1>
+        <p class="eslogan">Un lugar de reunión con lo típico, el sabor de nuestra tierra y la calidez de un buen libro.</p>
+    </header>
+
+    <!-- Contenedor Principal (Tarjeta) -->
+    <main id="tarjeta">
+        
+        <!-- La Escarapela ahora tiene la ID del botón para activar el Modo Oscuro -->
+        <div class="botones-control"></div>
+            <div class="circulo-celeste">
+                <div class="circulo-blanco">
+                    <div class="circulo-sol"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Sección de la Frase del Día (Martín Fierro) -->
+        <section class="seccion-frase">
+            <p id="texto-frase">"Los hermanos sean unidos porque esa es la ley primera; tengan unión verdadera en cualquier tiempo que sea."</p>
+            <p id="autor-frase">— José Hernández (Martín Fierro)</p>
+            <div class="botones-control">
+                <button id="btn-nueva-frase">☕ Nueva Frase Inspiradora</button>
+                <button id="btn-cambiar-tema">🌗 Cambiar Modo Claro/Oscuro</button>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- Sección de Menú de Lectura (Clásicos Argentinos) -->
+        <section class="seccion-libros">
+            <h2>📖 Biblioteca de Clásicos Nacionales</h2>
+            <p>Seleccioná un libro para solicitar tu lectura en la mesa:</p>
+            <select id="menu-libros">
+                <option value="" disabled selected>— Elegí un clásico argentino —</option>
+                <option value="El Aleph - Jorge Luis Borges">El Aleph — Jorge Luis Borges</option>
+                <option value="Operación Masacre - Rodolfo Walsh">Operación Masacre — Rodolfo Walsh</option>
+                <option value="Don Segundo Sombra - Ricardo Güiraldes">Don Segundo Sombra — Ricardo Güiraldes</option>
+                <option value="Rayuela - Julio Cortázar">Rayuela — Julio Cortázar</option>
+                <option value="Invasión - Adolfo Bioy Casares">La invención de Morel — Adolfo Bioy Casares</option>
+            </select>
+            <p id="notificacion-libro" class="oculto"></p>
+        </section>
+
+        <hr class="separador">
+
+               
+        <!-- Sección de Combos e Interactividad de Menú Virtual -->
+        <section class="seccion-menu">
+            <h2>🥐 Menú Virtual & Pedidos</h2>
+            <p>Elegí tu combo, oferta o productos individuales para armar tu pedido:</p>
+            
+            <select id="menu-combos">
+                <option value="" disabled selected>— Seleccioná una opción del Menú —</option>
+                
+                <!-- GRUPO DE COMBOS Y OFERTAS -->
+                <optgroup label="✨ Promociones y Ofertas del Día">
+                    <option value="Combo Tradicional: Café con 2 Medialunas || Precio: $5.000">☕ Combo Tradicional: Café con 2 Medialunas — $5.000</option>
+                    <option value="Combo Criollo: Matecocido con Torta Parrilla || Precio: $5.800">🧉 Combo Criollo: Matecocido con Torta Parrilla — $5.800</option>
+                    <option value="Combo Dietético: Té de Frutilla con Stevia y Tostadas || Precio: $4.500">🍓 Combo Dietético: Té con Stevia y Tostadas — $4.500</option>
+                    <option value="OFERTA DEL DÍA: Matecocido con 3 Tortas Fritas || Precio: $4.200">🔥 OFERTA DEL DÍA: Matecocido con 3 Tortas Fritas — $4.200</option>
+                </optgroup>
+
+                <!-- GRUPO DE INFUSIONES INDIVIDUALES -->
+                <optgroup label="☕ Infusiones Individuales">
+                    <option value="Café Solo Fuerte || Precio: $2.400">Café Solo Fuerte — $2.400</option>
+                    <option value="Café con Leche Calentito || Precio: $2.900">Café con Leche — $2.900</option>
+                    <option value="Mate Cocido Solo en Jarrito || Precio: $2.000">Mate Cocido Solo — $2.000</option>
+                    <option value="Café Especial con Stevia || Precio: $3.200">Café con Stevia (Dietético) — $3.200</option>
+                    <option value="Té de Frutilla Intenso con Stevia || Precio: $2.700">Té de Frutilla con Stevia — $2.700</option>
+                </optgroup>
+
+                <!-- GRUPO DE PANADERÍA Y COSAS RICAS -->
+                <optgroup label="🥐 Para Acompañar (Individual)">
+                    <option value="Torta Parrilla Individual al Rescoldo || Precio: $3.200">Torta Parrilla Sola (Ideal para el Mate) — $3.200</option>
+                    <option value="Porción de Tortas Fritas (x3) || Precio: $2.500">Porción de Tortas Fritas (x3) — $2.500</option>
+                    <option value="Factura Individual a Elección || Precio: $1.800">Factura de la Casa (Unidad) — $1.800</option>
+                </optgroup>
+
+                <!-- ESTRATEGIA COMERCIAL: ATRAER CLIENTES -->
+                <optgroup label="💝 Cortesía de la Casa (¡Estrategia de Bienvenida!)">
+                    <option value="Agua Caliente para el Mate || Precio: ¡GRATIS! 🎉">🧉 Termo de Agua Caliente para Mate — GRATIS $0</option>
+                    <option value="Agua Mineral Fresca de Manantial || Precio: ¡GRATIS! 🎉">💧 Copa de Agua Mineral — GRATIS $0</option>
+                </optgroup>
+            </select>
+            
+            <!-- Aquí se seguirá mostrando el ticket virtual del pedido sin tocar el JS -->
+            <p id="notificacion-combo" class="oculto"></p>
+        </section>
+
+
+    <!-- Vinculación del archivo de scripts interactivos al final del cuerpo -->
+    <script src="script.js"></script>
+</body>
+</html>
